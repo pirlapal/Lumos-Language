@@ -1,0 +1,2 @@
+# Python 3.10+ recommended. Uses only Python standard-library modules.
+# No pip dependencies are required.

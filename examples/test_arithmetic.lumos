@@ -1,0 +1,44 @@
+// Test Program: Arithmetic Operations
+// Author: Gunjan Shankarbhai Purohit
+// Date: March 26, 2026
+// Description: Tests basic arithmetic operations and operator precedence
+
+a = 10;
+b = 5;
+c = 3;
+
+sum = a + b;
+print(sum);
+
+diff = a - b;
+print(diff);
+
+product = a * b;
+print(product);
+
+quotient = a / b;
+print(quotient);
+
+result1 = a + b * c;
+print(result1);
+
+result2 = (a + b) * c;
+print(result2);
+
+d = 2;
+result3 = ((a - b) + c) * d;
+print(result3);
+
+pi = 3.14;
+radius = 5.0;
+area = pi * radius * radius;
+print(area);
+
+mixed = a + pi;
+print(mixed);
+
+negative = -a;
+print(negative);
+
+final = a + b - c * d / a;
+print(final);

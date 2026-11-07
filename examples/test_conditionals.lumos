@@ -1,0 +1,116 @@
+// Test Program: Conditional Constructs
+// Author: Gunjan Shankarbhai Purohit
+// Date: March 31, 2026
+
+age = 20;
+if (age >= 18) {
+    print("Adult");
+} else {
+    print("Minor");
+}
+
+score = 85;
+if (score >= 90) {
+    print("Grade A");
+} else {
+    print("Grade B or lower");
+}
+
+temperature = 30;
+if (temperature > 25) {
+    print("Hot day");
+}
+
+x = 15;
+if (x > 10) {
+    if (x > 20) {
+        print("Greater than 20");
+    } else {
+        print("Between 10 and 20");
+    }
+} else {
+    print("10 or less");
+}
+
+has_license = true;
+has_car = false;
+
+if (has_license and has_car) {
+    print("Can drive own car");
+} else {
+    print("Cannot drive own car");
+}
+
+is_weekend = false;
+is_holiday = true;
+
+if (is_weekend or is_holiday) {
+    print("Day off");
+} else {
+    print("Work day");
+}
+
+is_raining = false;
+if (not is_raining) {
+    print("Good weather");
+}
+
+a = 10;
+b = 20;
+c = 15;
+
+if ((a < b) and (b > c)) {
+    print("Condition met");
+} else {
+    print("Condition not met");
+}
+
+num = 5;
+result = num > 0 ? "Positive" : "Non-positive";
+print(result);
+
+min_age = 18;
+user_age = 25;
+status = user_age >= min_age ? "Allowed" : "Not allowed";
+print(status);
+
+value = 50;
+category = value > 75 ? "High" : (value > 25 ? "Medium" : "Low");
+print(category);
+
+p = 10;
+q = 20;
+max = p > q ? p : q;
+print(max);
+
+expected_word = "lumos";
+entered_word = "lumos";
+
+if (expected_word == entered_word) {
+    print("Access granted");
+} else {
+    print("Access denied");
+}
+
+expected = 100;
+actual = 90;
+
+if (expected != actual) {
+    print("Values do not match");
+} else {
+    print("Values match");
+}
+
+is_member = true;
+has_coupon = false;
+purchase_amount = 150;
+
+if ((is_member or has_coupon) and (purchase_amount > 100)) {
+    print("Discount eligible");
+} else {
+    print("No discount");
+}
+
+hours_worked = 45;
+overtime = hours_worked > 40 ? hours_worked - 40 : 0;
+print(overtime);

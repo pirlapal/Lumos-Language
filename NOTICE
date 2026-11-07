@@ -1,0 +1,15 @@
+Derived from pirlapal/SER502-Lumos-Team6, the SER502 Team 6 Lumos project.
+
+Original contributors:
+- Shreyas Jagannath Revankar
+- Sairaj Vinod Dalvi
+- Gunjan Shankarbhai Purohit
+- Pranav Kishor Irlapale
+
+Original author headers and the team contribution record are retained.
+The public edition uses fresh history and includes maintenance changes to
+CLI diagnostics, test portability, grammar documentation, and setup.
+These changes do not reassign original authorship or team credit.
+
+The original repository did not include a LICENSE file. This edition adds
+no blanket license grant or change to the contributors' existing rights.

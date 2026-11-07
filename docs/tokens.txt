@@ -1,0 +1,182 @@
+LUMOS LANGUAGE TOKEN DEFINITIONS
+Regular Expression Patterns
+==================================
+
+Author: Shreyas Jagannath Revankar
+Date: March 26, 2026
+Version: 1.0
+
+TOKEN CATEGORIES
+----------------
+
+1. KEYWORDS
+2. IDENTIFIERS
+3. LITERALS
+4. OPERATORS
+5. SEPARATORS
+6. COMMENTS
+7. WHITESPACE
+
+DETAILED TOKEN DEFINITIONS
+---------------------------
+
+1. KEYWORDS (Reserved Words)
+   Token Name    | Pattern       | Example
+   --------------|---------------|----------
+   IF            | if            | if
+   ELSE          | else          | else
+   WHILE         | while         | while
+   FOR           | for           | for
+   PRINT         | print         | print
+   AND           | and           | and
+   OR            | or            | or
+   NOT           | not           | not
+   TRUE          | true          | true
+   FALSE         | false         | false
+
+2. IDENTIFIERS
+   Token Name    | Regex Pattern              | Example
+   --------------|----------------------------|----------
+   IDENTIFIER    | [a-zA-Z_][a-zA-Z0-9_]*    | variable1, _temp, myVar
+
+   Rules:
+   - Must start with letter or underscore
+   - Can contain letters, digits, underscores
+   - Case-sensitive
+   - Cannot be a keyword
+
+3. LITERALS
+   Token Name    | Regex Pattern                    | Example
+   --------------|----------------------------------|----------
+   INTEGER       | [0-9]+                           | 42, 0, 1234
+   FLOAT         | [0-9]+\.[0-9]+                   | 3.14, 0.5, 123.456
+   STRING        | "([^"\\]|\\.)*"                  | "hello", "world"
+   BOOLEAN       | true|false                       | true, false
+
+   Notes:
+   - Integers: sequence of digits
+   - Floats: digits, decimal point, digits
+   - Strings: enclosed in double quotes, support escape sequences
+   - Booleans: literal true or false
+
+4. OPERATORS
+   Token Name    | Symbol | Description
+   --------------|--------|---------------------------
+   PLUS          | +      | Addition
+   MINUS         | -      | Subtraction / Unary minus
+   MULTIPLY      | *      | Multiplication
+   DIVIDE        | /      | Division
+   ASSIGN        | =      | Assignment
+   EQ            | ==     | Equality
+   NE            | !=     | Not equal
+   LT            | <      | Less than
+   GT            | >      | Greater than
+   LE            | <=     | Less than or equal
+   GE            | >=     | Greater than or equal
+   QUESTION      | ?      | Ternary condition
+   COLON         | :      | Ternary separator
+
+   Operator Precedence:
+   1. *, /           (Multiplicative)
+   2. +, -           (Additive)
+   3. <, >, <=, >=   (Relational)
+   4. ==, !=         (Equality)
+   5. and            (Logical AND)
+   6. or             (Logical OR)
+   7. ? :            (Ternary)
+   8. =              (Assignment)
+
+5. SEPARATORS
+   Token Name    | Symbol | Description
+   --------------|--------|------------------
+   LPAREN        | (      | Left parenthesis
+   RPAREN        | )      | Right parenthesis
+   LBRACE        | {      | Left brace
+   RBRACE        | }      | Right brace
+   SEMICOLON     | ;      | Statement terminator
+   COMMA         | ,      | Separator (future use)
+
+6. COMMENTS
+   Token Name    | Pattern            | Example
+   --------------|--------------------|-----------------
+   COMMENT       | //[^\n]*          | // this is a comment
+
+   Rules:
+   - Single-line comments only
+   - Start with //
+   - Continue to end of line
+   - Ignored by lexer
+
+7. WHITESPACE
+   Token Name    | Pattern         | Characters
+   --------------|-----------------|-------------
+   WHITESPACE    | [ \t\n\r]+     | space, tab, newline, carriage return
+
+   Rules:
+   - Ignored by lexer
+   - Used to separate tokens
+   - Preserved in string literals
+
+TOKEN RECOGNITION PRIORITY
+---------------------------
+
+When multiple patterns match, use longest match first:
+
+1. Keywords (checked before identifiers)
+2. Multi-character operators (==, !=, <=, >=)
+3. Single-character operators
+4. Float literals (before integers)
+5. Integer literals
+6. String literals
+7. Identifiers
+8. Comments
+9. Whitespace
+
+LEXICAL ERRORS
+--------------
+
+The following are lexical errors:
+
+1. Unterminated string literal
+   Example: "hello
+
+2. Invalid character
+   Example: @ # $
+
+3. Malformed number
+   Example: 123.45.67
+
+4. Invalid identifier
+   Example: 123abc (starts with digit)
+
+ERROR HANDLING
+--------------
+
+When a lexical error is encountered:
+1. Report error with line and column number
+2. Skip the invalid character
+3. Continue tokenization
+4. Accumulate all errors for reporting
+
+EXAMPLES
+--------
+
+Input Program:
+x = 10;
+y = x + 5;
+if (y > 10) {
+    print("Large");
+}
+
+Token Stream:
+IDENTIFIER(x) ASSIGN INTEGER(10) SEMICOLON
+IDENTIFIER(y) ASSIGN IDENTIFIER(x) PLUS INTEGER(5) SEMICOLON
+IF LPAREN IDENTIFIER(y) GT INTEGER(10) RPAREN LBRACE
+PRINT LPAREN STRING("Large") RPAREN SEMICOLON
+RBRACE
+
+Token Attributes:
+- Type: Token category (IDENTIFIER, INTEGER, etc.)
+- Value: Lexeme (actual text)
+- Line: Source line number
+- Column: Position in line

@@ -1,0 +1,428 @@
+LUMOS PROJECT - INDIVIDUAL CONTRIBUTIONS
+SER 502 - Spring 2026 - Team 6
+========================================
+
+Team Members:
+1. Shreyas Jagannath Revankar
+2. Sairaj Vinod Dalvi
+3. Gunjan Shankarbhai Purohit
+4. Pranav Kishor Irlapale
+
+========================================
+MILESTONE 1: PROJECT KICKOFF
+========================================
+
+All Members (Collaborative):
+- Initial project planning and discussions
+- Language design brainstorming
+- Tool selection (Python, ANTLR 4)
+- Repository structure setup
+
+Pranav Irlapale:
+- Created GitHub repository
+- Set up initial README.md
+- Configured project directory structure (src/, data/, doc/)
+- Added .gitignore for Python projects
+- Created requirements.txt with ANTLR dependencies
+
+========================================
+MILESTONE 2: GRAMMAR AND PARSER
+========================================
+
+March 26, 2026 - Foundation Setup
+------------------------------------------
+
+Shreyas Jagannath Revankar:
+- Designed complete EBNF grammar for Lumos language
+- Documented all language constructs and syntax rules
+- Defined token specifications with regular expressions
+- Established operator precedence and associativity rules
+- Created grammar.txt with comprehensive language specification
+- Created tokens.txt with detailed token definitions
+- Provided grammar examples and usage documentation
+
+Sairaj Vinod Dalvi:
+- Implemented Token class with type, value, line, column attributes
+- Created TokenType enumeration for all token categories
+- Implemented Lexer class for lexical analysis
+- Added tokenization for keywords, identifiers, and literals
+- Implemented number recognition (integers and floats)
+- Added string literal parsing with escape sequences
+- Implemented comment skipping (single-line //)
+- Added whitespace handling
+- Implemented two-character operators (==, !=, <=, >=)
+- Created error handling for invalid characters
+- Added lexer test cases
+
+Gunjan Shankarbhai Purohit:
+- Created test_arithmetic.lumos demonstrating arithmetic operations
+- Tested all arithmetic operators (+, -, *, /)
+- Included operator precedence examples
+- Added parenthesized expressions
+- Tested integer and floating-point arithmetic
+- Created test_variables.lumos for variable assignments
+- Tested all data types (int, float, string, boolean)
+- Included boolean operations (and, or, not)
+- Tested relational operators (<, >, <=, >=, ==, !=)
+- Added variable reassignment examples
+- Documented all test cases with comments
+
+Pranav Kishor Irlapale:
+- Created contribution.txt template and structure
+- Documented Initial contributions for all team members
+- Updated project timeline and milestones
+- Set up contribution tracking system
+- Coordinated task distribution among team members
+- Ensured equal workload distribution
+
+March 22, 2026 - Day 2: Core Implementation
+------------------------------------------
+
+Shreyas Jagannath Revankar:
+- Created complete grammar documentation PDF (Lumos_Language_Design.pdf)
+- Converted grammar.txt to professional formatted document
+- Added comprehensive syntax diagrams for all major constructs
+- Included detailed token definitions with examples
+- Documented language design rationale and decisions
+- Added 10 example programs demonstrating all features
+- Included operator precedence tables and associativity rules
+- Created error handling documentation
+
+Sairaj Vinod Dalvi:
+- Completed lexer implementation with all token types
+- Added string literal tokenization with escape sequences (\n, \t, \", \\)
+- Implemented all relational operators (<, >, <=, >=, ==, !=)
+- Implemented all arithmetic operators (+, -, *, /)
+- Implemented all logical operators (and, or, not)
+- Added comprehensive error handling for invalid tokens
+- Created lexer error reporting with line and column numbers
+- Added lexer test cases in main() function
+- Implemented two-character operator recognition
+- Added comment skipping functionality
+
+Gunjan Shankarbhai Purohit:
+- Created test_conditionals.lumos (134 lines)
+- Implemented if-then-else construct tests
+- Added ternary operator tests (? :)
+- Created nested conditional examples
+- Tested all relational operators in conditions
+- Added complex boolean condition tests
+- Implemented tests with and/or/not operators
+- Created equality and inequality tests
+
+Pranav Kishor Irlapale:
+- Defined all AST node classes in ast_nodes.py
+- Created Program, Statement, and Expression node hierarchies
+- Implemented AssignmentStatement, PrintStatement, ExpressionStatement nodes
+- Added IfStatement, WhileStatement, ForStatement, Block nodes
+- Created BinaryExpression, UnaryExpression, TernaryExpression nodes
+- Implemented Literal nodes (Integer, Float, String, Boolean)
+- Added Identifier node for variable references
+- Implemented to_dict() methods for JSON serialization
+- Set up parser structure with token stream management
+- Implemented expression parsing with proper operator precedence
+- Added primary expression parsing for all literal types
+
+March 23, 2026 - Day 3: Advanced Features
+------------------------------------------
+
+Shreyas Jagannath Revankar:
+- Extended parser for statement parsing
+- Implemented assignment statement parsing
+- Added print statement parsing
+- Implemented expression statement parsing
+- Added statement block parsing with brace handling
+- Implemented single statement blocks (without braces)
+
+Sairaj Vinod Dalvi:
+- Extended parser for control flow constructs
+- Implemented if-then-else statement parsing
+- Added ternary operator parsing with proper precedence
+- Implemented nested conditional handling
+- Added control flow validation logic
+- Tested complex conditional expressions
+
+Gunjan Shankarbhai Purohit:
+- Created test_loops.lumos (142 lines)
+- Implemented while loop test cases
+- Added for loop test examples
+- Created nested loop examples (while in while, for in for)
+- Tested loop conditions with complex expressions
+- Added loop body with multiple statements
+- Implemented countdown and countup loop tests
+- Created factorial and power calculation examples
+
+Pranav Kishor Irlapale:
+- Extended parser for loop constructs
+- Implemented while loop parsing with condition handling
+- Implemented for loop parsing (init; condition; update)
+- Added loop body statement parsing
+- Implemented loop validation logic
+- Added support for both braced and single-statement loop bodies
+- Integrated all parser components into cohesive system
+
+March 24, 2026 - Day 4: Integration & Testing
+------------------------------------------
+
+Shreyas Jagannath Revankar:
+- Created main compiler driver (compiler.py)
+- Integrated lexer and parser into unified compilation pipeline
+- Implemented command-line argument handling
+- Added verbose mode for detailed output
+- Implemented AST output formatting in JSON
+- Created token display functionality
+- Added comprehensive error reporting
+- Created parser test suite (test_parser.py)
+- Implemented 40+ parser test cases
+- Added tests for all language constructs
+- Created error detection tests
+- Implemented test result reporting and statistics
+
+Sairaj Vinod Dalvi:
+- Created comprehensive sample program (test_comprehensive.lumos)
+- Demonstrated all language features in single program
+- Included variable declarations (int, float, string, boolean)
+- Added arithmetic operations with precedence examples
+- Implemented boolean and relational operation examples
+- Created complex conditional examples
+- Added ternary operator demonstrations
+- Implemented while and for loop examples
+- Created nested loop examples
+- Added prime number finding algorithm
+- Implemented Fibonacci sequence generation
+- Included meaningful comments throughout
+
+Gunjan Shankarbhai Purohit:
+- Updated README.md with complete build and run instructions
+- Added detailed installation instructions
+- Documented compiler usage with examples
+- Added sample program descriptions
+- Created language syntax examples section
+- Included compiler output format documentation
+- Added error handling documentation
+- Created troubleshooting section
+- Documented project structure
+- Added milestone progress tracking
+
+Pranav Kishor Irlapale:
+- Updated contribution.txt with all member contributions
+- Documented Day 2, 3, and 4 work in detail
+- Created test runner script (test_all.py)
+- Implemented automated testing for all sample programs
+- Added test result reporting and statistics
+- Verified all deliverables are complete
+- Ensured project structure is consistent
+- Coordinated final review and testing
+
+========================================
+MILESTONE 2 SUMMARY
+========================================
+
+Total Contributions by Component:
+
+Documentation:
+- Complete grammar specification (EBNF)
+- Token definitions with regex patterns
+- Grammar documentation PDF (30+ pages)
+- README with build/run instructions
+- Contribution tracking
+
+Lexer Implementation:
+- Complete lexical analyzer
+- All token types supported
+- Error handling and reporting
+- String escape sequences
+- Comment processing
+
+Parser Implementation:
+- Recursive descent parser
+- All language constructs supported
+- Proper operator precedence
+- Error detection and reporting
+- AST generation
+
+AST Implementation:
+- Complete node hierarchy
+- JSON serialization
+- All statement and expression types
+- Clean object-oriented design
+
+Test Programs:
+- test_arithmetic.lumos (arithmetic operations)
+- test_variables.lumos (variables and booleans)
+- test_conditionals.lumos (if-else, ternary)
+- test_loops.lumos (for, while loops)
+- test_comprehensive.lumos (all features)
+
+Testing Infrastructure:
+- Parser test suite (40+ tests)
+- Automated test runner
+- Test result reporting
+- Error detection validation
+
+Compiler Integration:
+- Main compiler driver
+- Command-line interface
+- Verbose mode
+- JSON AST output
+
+========================================
+MILESTONE 3: RUNTIME & INTERPRETER
+========================================
+
+Sairaj Vinod Dalvi:
+- Designed and implemented runtime.py module
+- Created Environment class for variable storage
+- Implemented nested scope support with parent environment linking
+- Added variable define() method for assignments
+- Implemented get() method with scope chain lookup
+- Added set() method for variable updates
+- Created exists() method for variable checking
+- Implemented RuntimeError exception class
+- Added comprehensive docstrings for all methods
+- Tested environment with nested scopes
+
+
+Gunjan Shankarbhai Purohit:
+- Designed and implemented interpreter.py module (250+ lines)
+- Created Interpreter class with visitor pattern
+- Implemented visit() dispatcher method
+- Added Program node execution (visit_Program)
+- Implemented statement visitors:
+  - visit_AssignmentStatement (variable assignments)
+  - visit_PrintStatement (output generation)
+  - visit_ExpressionStatement (expression evaluation)
+  - visit_Block (scoped statement blocks)
+- Implemented expression evaluators:
+  - visit_BinaryExpression (arithmetic, relational, logical)
+  - visit_UnaryExpression (negation, not)
+  - visit_TernaryExpression (? : operator)
+  - visit_Identifier (variable lookup)
+- Implemented literal visitors:
+  - visit_IntegerLiteral
+  - visit_FloatLiteral
+  - visit_StringLiteral
+  - visit_BooleanLiteral
+- Added helper methods:
+  - is_truthy() for boolean evaluation
+  - value_to_string() for print formatting
+- Implemented division by zero checking
+- Added type-appropriate division (integer vs float)
+
+
+Shreyas Jagannath Revankar:
+- Extended interpreter with control flow execution
+- Implemented visit_IfStatement:
+  - Condition evaluation
+  - Then/else branch selection
+  - Proper scope handling
+- Implemented visit_WhileStatement:
+  - Loop condition checking
+  - Iterative body execution
+  - Infinite loop protection
+- Implemented visit_ForStatement:
+  - Initialization execution
+  - Condition-based iteration
+  - Update statement execution
+  - Loop scope management
+- Updated compiler.py to integrate runtime:
+  - Added interpreter import
+  - Modified compile_file() for execution
+  - Added --ast flag to show AST
+  - Added --parse-only flag to skip execution
+  - Added execute parameter to control runtime
+  - Updated command-line interface
+  - Added program output section
+  - Improved error handling for runtime errors
+- Tested all control flow constructs
+- Verified scope handling in nested blocks
+
+
+Pranav Kishor Irlapale:
+- Created comprehensive runtime test suite (test_runtime.py)
+- Implemented test functions:
+  - test_arithmetic() - arithmetic operation execution
+  - test_variables() - variable assignment and retrieval
+  - test_conditionals() - if-else statement execution
+  - test_comprehensive() - full program execution
+  - test_error_handling() - runtime error detection
+- Added subprocess-based test execution
+- Implemented timeout handling for infinite loops
+- Created test result reporting system
+- Updated README.md with execution instructions:
+  - Added command-line options documentation
+  - Documented --verbose, --ast, --parse-only flags
+  - Added execution examples
+  - Updated architecture section
+  - Added runtime error documentation
+  - Updated project status to Milestone 3
+  - Added feature checklist
+- Updated contribution.txt with Milestone 3 work
+- Created MILESTONE3_PLAN.md with architecture details
+- Created FINAL_COMMIT_GUIDE.md for team coordination
+- Verified all deliverables complete
+
+========================================
+MILESTONE 3 IMPLEMENTATION DETAILS
+========================================
+
+Runtime Environment (runtime.py):
+- Environment class with symbol table
+- Nested scope support via parent links
+- Variable storage and retrieval
+- Scope chain lookup
+- Runtime error handling
+- 100 lines of well-documented code
+
+Interpreter (interpreter.py):
+- Visitor pattern implementation
+- All AST node types supported
+- Expression evaluation with proper precedence
+- Statement execution with side effects
+- Control flow handling (if/else, loops)
+- Scope management for blocks and loops
+- Type-appropriate operations
+- Error handling (undefined variables, division by zero)
+- 250+ lines of clean, documented code
+
+Compiler Integration (compiler.py updated):
+- Runtime execution phase added
+- Command-line interface enhanced
+- Multiple execution modes
+- Comprehensive error reporting
+- Seamless lexer → parser → interpreter pipeline
+
+Testing Infrastructure:
+- test_runtime.py - Runtime execution tests
+- Subprocess-based execution
+- Timeout handling
+- Error detection validation
+- Result reporting
+
+Documentation Updates:
+- README with complete execution instructions
+- contribution.txt with detailed Milestone 3 work
+- Command-line interface documentation
+- Architecture documentation
+- Error handling guide
+
+========================================
+MILESTONE 3 SUMMARY
+========================================
+
+Features Implemented:
+- Complete runtime environment
+- Full interpreter with visitor pattern
+- All language features executing correctly
+- Comprehensive error handling
+- Command-line interface
+- Testing infrastructure
+
+Test Results:
+- All arithmetic operations execute correctly
+- Variable storage and retrieval working
+- Boolean and relational operations functional
+- Control flow (if/else, ternary) working
+- Loops (while, for) executing properly
+- Nested scopes functioning correctly
+- Error detection and reporting operational

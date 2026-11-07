@@ -1,0 +1,87 @@
+// Test Program: Variable Assignments and Boolean Operations
+// Author: Gunjan Shankarbhai Purohit
+// Date: March 26, 2026
+// Description: Tests variable assignments, booleans, and logical operators
+
+age = 25;
+year = 2026;
+count = 0;
+
+print(age);
+print(year);
+print(count);
+
+price = 99.99;
+discount = 0.15;
+tax = 0.08;
+
+print(price);
+print(discount);
+
+name = "Team 6";
+message = "Welcome to Lumos";
+greeting = "Hello, World!";
+
+print(name);
+print(message);
+print(greeting);
+
+is_valid = true;
+is_active = false;
+has_permission = true;
+
+print(is_valid);
+print(is_active);
+print(has_permission);
+
+result1 = is_valid and has_permission;
+print(result1);
+
+result2 = is_valid and is_active;
+print(result2);
+
+result3 = is_valid or is_active;
+print(result3);
+
+result4 = is_active or is_active;
+print(result4);
+
+result5 = not is_valid;
+print(result5);
+
+result6 = not is_active;
+print(result6);
+
+result7 = is_valid and (is_active or has_permission);
+print(result7);
+
+result8 = not (is_valid and is_active);
+print(result8);
+
+x = 10;
+y = 20;
+
+result9 = y > x;
+print(result9);
+
+result10 = x < y;
+print(result10);
+
+result11 = x == y;
+print(result11);
+
+result12 = x != y;
+print(result12);
+
+result13 = y >= x;
+print(result13);
+
+result14 = x <= y;
+print(result14);
+
+counter = 0;
+print(counter);
+counter = 5;
+print(counter);
+counter = 10;
+print(counter);

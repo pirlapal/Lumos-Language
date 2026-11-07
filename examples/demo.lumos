@@ -1,0 +1,81 @@
+// DEMO PROGRAM FOR MILESTONE 3 VERIFICATION
+// This program demonstrates all language features
+
+// 1. VARIABLE DECLARATIONS
+print("=== Testing Variables ===");
+x = 10;
+y = 20;
+name = "Lumos Language";
+is_working = true;
+
+print(name);
+print(x);
+print(y);
+
+// 2. ARITHMETIC OPERATIONS
+print("=== Testing Arithmetic ===");
+sum = x + y;
+product = x * y;
+print(sum);
+print(product);
+
+// 3. CONDITIONAL STATEMENTS
+print("=== Testing Conditionals ===");
+if (sum > 25) {
+    print("Sum is large");
+} else {
+    print("Sum is small");
+}
+
+// 4. TERNARY OPERATOR
+result = sum > 15 ? "Greater than 15" : "Less than 15";
+print(result);
+
+// 5. LOOPS - While Loop
+print("=== Testing While Loop ===");
+counter = 0;
+while (counter < 3) {
+    print(counter);
+    counter = counter + 1;
+}
+
+// 6. LOOPS - For Loop
+print("=== Testing For Loop ===");
+for (i = 0; i < 3; i = i + 1) {
+    print(i);
+}
+
+// 7. NESTED LOOPS
+print("=== Testing Nested Loops ===");
+for (row = 1; row <= 2; row = row + 1) {
+    for (col = 1; col <= 2; col = col + 1) {
+        value = row * col;
+        print(value);
+    }
+}
+
+// 8. BOOLEAN OPERATIONS
+print("=== Testing Boolean Logic ===");
+a = true;
+b = false;
+result1 = a and b;
+result2 = a or b;
+result3 = not b;
+print(result1);
+print(result2);
+print(result3);
+
+// 9. RELATIONAL OPERATORS
+print("=== Testing Comparisons ===");
+test1 = 10 > 5;
+test2 = 10 == 10;
+test3 = 5 != 10;
+print(test1);
+print(test2);
+print(test3);
+
+// FINAL MESSAGE
+print("=== ALL TESTS COMPLETE ===");
+success = true;
+message = success ? "Milestone 3 Achieved!" : "Failed";
+print(message);

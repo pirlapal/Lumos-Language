@@ -1,0 +1,165 @@
+LUMOS LANGUAGE GRAMMAR SPECIFICATION
+Extended Backus-Naur Form (EBNF)
+=====================================
+
+Author: Shreyas Jagannath Revankar
+Date: March 26, 2026
+Version: 1.0
+
+PROGRAM STRUCTURE
+-----------------
+
+program ::= statement_list
+
+statement_list ::= statement*
+
+statement ::= assignment_stmt
+            | print_stmt
+            | if_stmt
+            | while_stmt
+            | for_stmt
+            | expression_stmt
+            | block
+
+STATEMENTS
+----------
+
+assignment_stmt ::= IDENTIFIER '=' expression ';'
+
+print_stmt ::= 'print' '(' expression ')' ';'
+
+expression_stmt ::= expression ';'
+
+if_stmt ::= 'if' '(' expression ')' block ('else' block)?
+
+while_stmt ::= 'while' '(' expression ')' block
+
+for_stmt ::= 'for' '(' assignment_head ';' expression ';' assignment_head ')' block
+
+assignment_head ::= IDENTIFIER '=' expression
+
+block ::= '{' statement_list '}'
+        | statement
+
+EXPRESSIONS
+-----------
+
+expression ::= ternary_expr
+
+ternary_expr ::= logical_or_expr ('?' expression ':' expression)?
+
+logical_or_expr ::= logical_and_expr ('or' logical_and_expr)*
+
+logical_and_expr ::= equality_expr ('and' equality_expr)*
+
+equality_expr ::= relational_expr (('==' | '!=') relational_expr)*
+
+relational_expr ::= additive_expr (('<' | '>' | '<=' | '>=') additive_expr)*
+
+additive_expr ::= multiplicative_expr (('+' | '-') multiplicative_expr)*
+
+multiplicative_expr ::= unary_expr (('*' | '/') unary_expr)*
+
+unary_expr ::= ('not' | '-') unary_expr
+             | primary_expr
+
+primary_expr ::= INTEGER
+               | FLOAT
+               | STRING
+               | BOOLEAN
+               | IDENTIFIER
+               | '(' expression ')'
+
+LEXICAL ELEMENTS
+----------------
+
+KEYWORDS: if, else, while, for, print, and, or, not, true, false
+
+OPERATORS:
+  Arithmetic: +, -, *, /
+  Relational: <, >, <=, >=, ==, !=
+  Logical: and, or, not
+  Assignment: =
+  Ternary: ? :
+
+SEPARATORS: ( ) { } ; ,
+
+LITERALS:
+  INTEGER: digit+
+  FLOAT: digit+ '.' digit+
+  STRING: '"' char* '"'
+  BOOLEAN: 'true' | 'false'
+
+IDENTIFIER: (letter | '_') (letter | digit | '_')*
+
+COMMENT: '//' any* newline
+
+WHITESPACE: space | tab | newline (ignored)
+
+OPERATOR PRECEDENCE (highest to lowest)
+----------------------------------------
+
+1. Primary expressions (literals, identifiers, parentheses)
+2. Unary operators (-, not)
+3. Multiplicative (*, /)
+4. Additive (+, -)
+5. Relational (<, >, <=, >=)
+6. Equality (==, !=)
+7. Logical AND (and)
+8. Logical OR (or)
+9. Ternary (? :)
+Assignment is statement syntax, not an expression operator.
+
+ASSOCIATIVITY
+-------------
+
+- All binary operators are left-associative
+- Unary operators are right-associative
+- Ternary operator is right-associative
+- Chained assignment is not supported.
+
+LANGUAGE CONSTRAINTS
+--------------------
+
+1. All statements must end with semicolon except blocks
+2. Variables must be assigned before use
+3. Type checking is dynamic
+4. Logical operators and conditions use truthiness; and/or evaluate both operands.
+5. Operations inherit Python value behavior; there is no separate static type checker.
+6. String concatenation with + is accepted by the interpreter. Integer / uses floor division.
+7. Comments are single-line only
+8. Identifiers are case-sensitive
+9. Keywords cannot be used as identifiers
+
+EXAMPLE PROGRAMS
+----------------
+
+Example 1: Variable Assignment
+x = 10;
+y = 20;
+print(x + y);
+
+Example 2: Conditional
+age = 25;
+if (age >= 18) {
+    print("Adult");
+} else {
+    print("Minor");
+}
+
+Example 3: Loop
+i = 0;
+while (i < 5) {
+    print(i);
+    i = i + 1;
+}
+
+Example 4: Ternary Operator
+x = 10;
+result = x > 5 ? "Greater" : "Smaller";
+print(result);
+
+Example 5: For Loop
+for (i = 0; i < 10; i = i + 1) {
+    print(i);
+}

@@ -1,0 +1,261 @@
+// Comprehensive Test Program: All Lumos Features
+// Author: Sairaj Vinod Dalvi
+// Date: April 02, 2026
+
+
+// Integer variables
+year = 2026;
+month = 3;
+day = 24;
+
+// Float variables
+pi = 3.14159;
+e = 2.71828;
+
+// String variables
+title = "Lumos Programming Language";
+author = "Team 6";
+
+// Boolean variables
+debug = true;
+production = false;
+
+print(title);
+print(author);
+
+// ============================================
+// ARITHMETIC OPERATIONS
+// ============================================
+
+// Basic arithmetic
+a = 100;
+b = 25;
+
+sum = a + b;
+difference = a - b;
+product = a * b;
+quotient = a / b;
+
+print(sum);
+print(difference);
+print(product);
+print(quotient);
+
+// Complex arithmetic with precedence
+result = a + b * 2 - (a / b);
+print(result);
+
+// Float arithmetic
+radius = 5.0;
+area = pi * radius * radius;
+print(area);
+
+// ============================================
+// BOOLEAN AND RELATIONAL OPERATIONS
+// ============================================
+
+// Relational operators
+is_greater = a > b;
+is_less = a < b;
+is_equal = a == b;
+is_not_equal = a != b;
+
+print(is_greater);
+print(is_equal);
+
+// Logical operators
+condition1 = true;
+condition2 = false;
+
+// AND operation
+and_result = condition1 and condition2;
+print(and_result);
+
+// OR operation
+or_result = condition1 or condition2;
+print(or_result);
+
+// NOT operation
+not_result = not condition2;
+print(not_result);
+
+// Complex boolean expression
+complex = (a > b) and ((condition1 or condition2) and not production);
+print(complex);
+
+// ============================================
+// CONDITIONAL STATEMENTS - IF-ELSE
+// ============================================
+
+// Simple if-else
+age = 21;
+if (age >= 18) {
+    print("Eligible to vote");
+} else {
+    print("Not eligible to vote");
+}
+
+// Nested if-else
+score = 88;
+if (score >= 90) {
+    print("Grade A");
+} else {
+    if (score >= 80) {
+        print("Grade B");
+    } else {
+        if (score >= 70) {
+            print("Grade C");
+        } else {
+            print("Grade D or F");
+        }
+    }
+}
+
+// If-else with complex conditions
+temperature = 72;
+humidity = 60;
+
+if ((temperature > 70) and (temperature < 80)) {
+    if (humidity < 70) {
+        print("Comfortable weather");
+    } else {
+        print("Humid weather");
+    }
+} else {
+    print("Uncomfortable temperature");
+}
+
+// ============================================
+// TERNARY OPERATOR
+// ============================================
+
+// Simple ternary
+max_value = a > b ? a : b;
+print(max_value);
+
+// Nested ternary
+grade = score > 90 ? "A" : (score > 80 ? "B" : "C");
+print(grade);
+
+// Ternary with calculation
+discount = product > 50 ? product * 0.1 : 0.0;
+print(discount);
+
+// ============================================
+// WHILE LOOPS
+// ============================================
+
+// Count from 1 to 5
+counter = 1;
+while (counter <= 5) {
+    print(counter);
+    counter = counter + 1;
+}
+
+// Calculate factorial using while
+n = 5;
+factorial = 1;
+i = 1;
+while (i <= n) {
+    factorial = factorial * i;
+    i = i + 1;
+}
+print(factorial);
+
+// While loop with condition
+value = 100;
+while (value > 10) {
+    print(value);
+    value = value / 2;
+}
+
+// ============================================
+// FOR LOOPS
+// ============================================
+
+// Simple for loop
+for (j = 0; j < 5; j = j + 1) {
+    print(j);
+}
+
+// For loop with calculation
+sum_of_squares = 0;
+for (k = 1; k <= 5; k = k + 1) {
+    sum_of_squares = sum_of_squares + (k * k);
+}
+print(sum_of_squares);
+
+// For loop counting backwards
+for (m = 10; m > 0; m = m - 1) {
+    print(m);
+}
+
+// ============================================
+// NESTED LOOPS
+// ============================================
+
+// Nested for loops - multiplication table
+for (row = 1; row <= 3; row = row + 1) {
+    for (col = 1; col <= 3; col = col + 1) {
+        cell = row * col;
+        print(cell);
+    }
+}
+
+// ============================================
+// COMBINING ALL FEATURES
+// ============================================
+
+// Program to find prime numbers up to 20
+limit = 20;
+num = 2;
+
+while (num <= limit) {
+    is_prime = true;
+    divisor = 2;
+
+    // Check if num is prime
+    while ((divisor * divisor) <= num) {
+        remainder = num - ((num / divisor) * divisor);
+        if (remainder == 0) {
+            is_prime = false;
+        }
+        divisor = divisor + 1;
+    }
+
+    // Print if prime
+    if (is_prime) {
+        print(num);
+    }
+
+    num = num + 1;
+}
+
+// ============================================
+// FIBONACCI SEQUENCE
+// ============================================
+
+// Generate first 10 Fibonacci numbers
+fib_count = 10;
+fib_a = 0;
+fib_b = 1;
+fib_i = 0;
+
+print(fib_a);
+print(fib_b);
+
+while (fib_i < (fib_count - 2)) {
+    fib_next = fib_a + fib_b;
+    print(fib_next);
+    fib_a = fib_b;
+    fib_b = fib_next;
+    fib_i = fib_i + 1;
+}
+
+// ============================================
+// FINAL MESSAGE
+// ============================================
+
+success = true;
+message = success ? "All features tested successfully!" : "Test failed";
+print(message);
